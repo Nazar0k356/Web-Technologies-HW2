@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-box">
+            <div class="input-section">
+                <input type="text" placeholder="Назва товару">
+                <button data-tooltip="Додавання товару" class="add-btn">Додати</button>
+            </div>
+            <div class="list-section">
+                <div class="item">
+                    <span class="item-name"><s>Помідори</s></span>
+                    <span class="item-count">2</span>
+                    <button data-tooltip="Змінити статус" class="status-btn grey-btn">Не куплено</button>
+                </div>
+                <div class="item">
+                    <span class="item-name">Печиво</span>
+                    <div class="quantity-control">
+                        <button data-tooltip="Віднімання товару" class="quantity-btn minus">-</button>
+                        <span class="item-count">2</span>
+                        <button data-tooltip="Додавання товару" class="quantity-btn plus">+</button>
+                    </div>
+                    <button data-tooltip="Змінити статус" class="status-btn grey-btn">Куплено</button>
+                    <button data-tooltip="Прибрати товар" class="delete-btn">✖</button>
+                </div>
+                <div class="item">
+                    <span class="item-name">Сир</span>
+                    <div class="quantity-control">
+                        <button data-tooltip="Віднімання товару" class="quantity-btn minus">-</button>
+                        <span class="item-count">1</span>
+                        <button data-tooltip="Додавання товару" class="quantity-btn plus">+</button>
+                    </div>
+                    <button data-tooltip="Змінити статус" class="status-btn grey-btn">Куплено</button>
+                    <button data-tooltip="Прибрати товар" class="delete-btn">✖</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-box">
+            <div class="summary-section">
+                <div class="remaining">
+                    <h3>Залишилося</h3>
+                    <div class="summary-item">Печиво <span class="count yellow-circle">2</span></div>
+                    <div class="summary-item">Сир <span class="count yellow-circle">1</span></div>
+                </div>
+                <div class="bought">
+                    <h3>Куплено</h3>
+                    <div class="summary-item"><s>Помідори</s> <span class="count yellow-circle">2</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="badge">
+        <div class="badge-text">BuyList</div>
+        <div class="details">Created by: Степаненко Назар</div>
+    </div>
+    
+</body>
+</html>
