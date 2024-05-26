@@ -14,11 +14,21 @@
                 <button data-tooltip="Додавання товару" class="add-btn">Додати</button>
             </div>
             <div class="list-section">
+                <hr>
                 <div class="item">
                     <span class="item-name"><s>Помідори</s></span>
-                    <span class="item-count">2</span>
-                    <button data-tooltip="Змінити статус" class="status-btn grey-btn">Не куплено</button>
+                    <div class="quantity-control quantity-unchangable">
+                        <button data-tooltip="Віднімання товару" class="quantity-btn minus">-</button>
+                        <span class="item-count">2</span>
+                        <button data-tooltip="Додавання товару" class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="bought-panel status-not-bought">
+                        <button data-tooltip="Змінити статус" class="status-btn grey-btn bought">Куплено</button>
+                        <button data-tooltip="Прибрати товар" class="delete-btn">✖</button>
+                        <button data-tooltip="Змінити статус" class="status-btn grey-btn not-bought">Не куплено</button>
+                    </div>
                 </div>
+                <hr>
                 <div class="item">
                     <span class="item-name">Печиво</span>
                     <div class="quantity-control">
@@ -26,9 +36,13 @@
                         <span class="item-count">2</span>
                         <button data-tooltip="Додавання товару" class="quantity-btn plus">+</button>
                     </div>
-                    <button data-tooltip="Змінити статус" class="status-btn grey-btn">Куплено</button>
-                    <button data-tooltip="Прибрати товар" class="delete-btn">✖</button>
+                    <div class="bought-panel">
+                        <button data-tooltip="Змінити статус" class="status-btn grey-btn bought">Куплено</button>
+                        <button data-tooltip="Прибрати товар" class="delete-btn">✖</button>
+                        <button data-tooltip="Змінити статус" class="status-btn grey-btn not-bought">Не куплено</button>
+                    </div>
                 </div>
+                <hr>
                 <div class="item">
                     <span class="item-name">Сир</span>
                     <div class="quantity-control">
@@ -36,8 +50,11 @@
                         <span class="item-count">1</span>
                         <button data-tooltip="Додавання товару" class="quantity-btn plus">+</button>
                     </div>
-                    <button data-tooltip="Змінити статус" class="status-btn grey-btn">Куплено</button>
-                    <button data-tooltip="Прибрати товар" class="delete-btn">✖</button>
+                    <div class="bought-panel">
+                        <button data-tooltip="Змінити статус" class="status-btn grey-btn bought">Куплено</button>
+                        <button data-tooltip="Прибрати товар" class="delete-btn">✖</button>
+                        <button data-tooltip="Змінити статус" class="status-btn grey-btn not-bought">Не куплено</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,11 +62,14 @@
             <div class="summary-section">
                 <div class="remaining">
                     <h3>Залишилося</h3>
+                    <hr>
                     <div class="summary-item">Печиво <span class="count yellow-circle">2</span></div>
                     <div class="summary-item">Сир <span class="count yellow-circle">1</span></div>
                 </div>
                 <div class="bought">
+                    <hr>    
                     <h3>Куплено</h3>
+                    <hr>
                     <div class="summary-item"><s>Помідори</s> <span class="count yellow-circle">2</span></div>
                 </div>
             </div>

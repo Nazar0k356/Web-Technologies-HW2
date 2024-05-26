@@ -7,12 +7,14 @@ body {
 
 .container {
     display: flex;
+    flex-direction: row;
     gap: 20px;
 }
 
 .left-box, .right-box {
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
-    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 100%;
@@ -21,8 +23,7 @@ body {
 
 .input-section {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .input-section input {
@@ -42,7 +43,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.input-section .add-btn:hover {
+.input-section .add-btn:hover { 
     background-color: #0056b3;
 }
 
@@ -50,23 +51,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
-.list-section .item .item-name s {
-    text-decoration: line-through;
+.list-section .item-name{
+    flex-basis: 33.333%;
 }
 
 .list-section .quantity-control {
+    flex-basis: 33.333%;
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
 
 .list-section .quantity-btn {
     width: 30px;
@@ -85,25 +84,76 @@ body {
     color: white;
 }
 
+.list-section .quantity-btn.minus:hover {
+    background-color: #c72f3e;
+    color: white;
+}
+
+.list-section .quantity-btn.plus:hover {
+    background-color: #24973f;
+    color: white;
+}
+
 .list-section .quantity-btn.plus {
     background-color: #28a745;
     color: white;
 }
 
+.list-section .bought-panel {
+    display: flex;
+    gap:5px;
+}
+
+.list-section .bought{
+    order:1;
+}
+
+.list-section .delete-btn{
+    order:1;
+}
+
+.list-section .not-bought{
+    order:0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.status-not-bought .bought{
+    order:0;
+    opacity: 0;
+    pointer-events:none;
+}
+
+.status-not-bought .delete-btn{
+    order:0;
+    opacity: 0;
+    pointer-events:none;
+}
+
+.status-not-bought .not-bought{
+    order:1;
+    opacity: 1;
+    pointer-events:all;
+}
+
+
 .list-section .status-btn {
     padding: 5px 10px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.list-section .status-btn.grey-btn {
-    background-color: #6c757d;
+    box-shadow: 0 2px 5px rgba(143, 115, 115, 0.1);
+    border-radius: 5px;
+    background-color: #b6b6b6;
     color: white;
+}   
+
+.quantity-unchangable .quantity-btn {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .list-section .status-btn.grey-btn:hover {
-    background-color: #5a6268;
+    background-color: #7a7a7a;
 }
 
 .list-section .delete-btn {
@@ -112,7 +162,6 @@ body {
     background-color: #dc3545;
     color: white;
     cursor: pointer;
-    margin-left: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -124,7 +173,6 @@ body {
 .summary-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .summary-section .remaining,
@@ -133,23 +181,26 @@ body {
 }
 
 .summary-section h3 {
-    margin: 0 0 10px 0;
+    margin: 10px;
     font-size: 18px;
 }
 
-.summary-section .summary-item {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+hr{
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
+.summary-section .summary-item {
+    display: inline-block;
+    background-color: rgba(136, 136, 136, 0.385);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left:10px;
+}
+
+
 .summary-section .summary-item .count {
-    background-color: #ffc107;
+    background-color: #ff6607;
     padding: 5px 10px;
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -159,19 +210,19 @@ body {
     position: fixed;
     left: 10px;
     bottom: -70px;
-    background-color: #a104c4; /* Темно фіолетовий */
+    background-color: #a104c4;
     color: white;
     padding: 10px 20px;
     width: 80px;
     height: 100px;
-    border-radius: 10px 10px 0 0; /* Скруглені верхні кути */
+    border-radius: 10px 10px 0 0; 
     cursor: pointer;
-    transition: all 0.5s ease; /* Змінилась тривалість анімації */
-    transition-delay: 0.3s; /* Затримка анімації */
+    transition: all 0.3s ease; 
+    transition-delay: 0.3s; 
 }
 .badge:hover {
-    background-color: #1a1ac2; /* Колір при наведенні */
-    transform: translateY(-70px); /* Витягування вгору */
+    background-color: #1a1ac2; 
+    transform: translateY(-70px); 
 }
 .badge-text {
     font-size: 28px;
@@ -207,7 +258,6 @@ body {
 
 button {
     position: relative; 
-    cursor: pointer; /* Додає курсор у вигляді руки при наведенні на кнопку */
 }
 
 button::after {
@@ -216,7 +266,7 @@ button::after {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) scale(0);
-    background-color: #800080; /* Фіолетовий колір */
+    background-color: #800080;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
