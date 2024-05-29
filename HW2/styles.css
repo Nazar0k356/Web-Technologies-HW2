@@ -147,9 +147,13 @@ body {
     color: white;
 }   
 
-.quantity-unchangable .quantity-btn {
+.status-not-bought .quantity-btn {
     opacity: 0;
     pointer-events: none;
+}
+
+.status-not-bought .item-name {
+    text-decoration: line-through;
 }
 
 .list-section .status-btn.grey-btn:hover {
@@ -198,9 +202,12 @@ hr{
     margin-left:10px;
 }
 
+.summary-section .bought .summary-text{
+    text-decoration: line-through;
+}
 
 .summary-section .summary-item .count {
-    background-color: #ff6607;
+    background-color: #ff971f;
     padding: 5px 10px;
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
