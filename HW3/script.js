@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         addItem("Сир", 1, false);
     };
 
+    var map = new Map;
+
     addButton.addEventListener('click', () => {
         const text = inputText.value.trim();
         if (text !== '') {
@@ -20,7 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
     function addItem(text, num, nonBought){
+        if(map.has(text)){
+            alert('Такий продукт вже існує');
+            return;
+        } else {
+            map.set(text, 1);
+        }
         //Додання лінії
         itemsContainer.appendChild(document.createElement('hr'));
 
@@ -57,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         item_name.addEventListener('click', () => {
             if(!window.getComputedStyle(item_name).textDecoration.includes('line-through')){
                 const text = item_name.textContent.trim();
+                map.delete(text);
+
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.value = text;
@@ -67,9 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
                 input.addEventListener('blur', () => {
                     const newText = input.value.trim();
-                    input.replaceWith(item_name);
-                    item_name.textContent = newText;
-                    summary_text.textContent = newText;
+                    if(newText !== ""){
+                        if(map.has(newText)){
+                            alert('Такий продукт вже існує');
+                        } else {
+                            input.replaceWith(item_name);
+                            item_name.textContent = newText;
+                            summary_text.textContent = newText;
+                            map.set(newText, 1);
+                        }
+                    }
                 });
             }
         });
@@ -151,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             item.previousElementSibling.remove();
             item.remove();
             summary_item.remove;
+            map.delete(item_name.textContent.trim());
         });
 
         btn_not_bought.addEventListener('click', () => {
