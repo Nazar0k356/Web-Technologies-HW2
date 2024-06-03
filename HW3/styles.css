@@ -181,7 +181,7 @@ body {
 
 .summary-section .remaining,
 .summary-section .bought {
-    flex: 1;
+    flex: 1;    
 }
 
 .summary-section h3 {
@@ -199,7 +199,8 @@ hr{
     background-color: rgba(136, 136, 136, 0.385);
     padding: 10px;
     border-radius: 5px;
-    margin-left:10px;
+    margin-left:5px;
+    margin-bottom: 5px;
 }
 
 .summary-section .bought .summary-text{
@@ -207,6 +208,7 @@ hr{
 }
 
 .summary-section .summary-item .count {
+    margin-left: 5px;
     color: white;
     background-color: #ff971f;
     padding: 5px 10px;
