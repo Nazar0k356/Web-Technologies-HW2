@@ -207,6 +207,7 @@ hr{
 }
 
 .summary-section .summary-item .count {
+    color: white;
     background-color: #ff971f;
     padding: 5px 10px;
     border-radius: 50%;
